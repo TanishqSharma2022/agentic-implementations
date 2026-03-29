@@ -68,8 +68,8 @@ class ReActAgent:
     def run(self, query):
 
         prompt = f"{self.system_prompt}\n\nUser: {query}\n"
-        # prompt = self.system_prompt + "\n" + self.memory + f"\nUser: {query}\n"
         # persistant memory to give to LLM that is used in actual ReAct code implementation
+        # prompt = self.system_prompt + "\n" + self.memory + f"\nUser: {query}\n"
         history = prompt
 
         for step in range(5):  # max steps

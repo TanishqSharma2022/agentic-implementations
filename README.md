@@ -68,3 +68,8 @@ Final Answer: The result of 45 multiplied by 12 is 540.
 ├── requirements.txt      # Python dependencies
 └── README.md             # This file
 ```
+
+
+# Thought behind the reasoning loop
+
+I use the inspiration from the actual [ReAct](https://arxiv.org/pdf/2210.03629) loop. The LLM has a specific prompt that it needs to output in the exact format i.e., **Thought**, **Action**, **Observation** and repeat until It gets the **Final Answer**. In the reasoning loop, I take maximum 5 steps, but this can be changed to an infinite loop with better error handling considering that the LLM is not stuck in an infinite loop. Firstly, checks if we have the final answer. Otherwise, extract the action. If action exists, we use the calculate function to get the results and then append this with observation. Otherwise, we assume the answer is ready. 
